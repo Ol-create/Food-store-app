@@ -1,3 +1,49 @@
-# Food store app
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This is the first time at Microverse that you will build a project in a group. Apart from technical knowledge, you will need to use a few new processes and tools. You have been preparing for that with a few individual tasks in the Microverse program, and it is a time to connect all of them together. Besides - it's time to check what exactly you will build!
+# Capstone Module 2
+
+
+> Web application that get data from https://www.themealdb.com/api.php, and maintains likes, comments and reserevations using Involvement API.
+
+
+## Built With
+
+- Technologies used: HTML, CSS, Javascript, Webpack, Jest
+
+## Live Demo (if available)
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Setup
+- Click the green `Code` button on the repo
+- In your local PC, open your terminal in the folder you would like to clone the project.
+- Clone the repo with the command: `git clone (copied link)`; like so: `git clone https://github.com/
+- On the terminal, navigate into the directory like so: `cd Capstone-Module-2`
+
+### Install
+- in visual studio code build with the command `npm run build` 
+- and run the distribution with the command `npm start`
+
+## Authors
+
+👤 **Elio Cortés**
+
+- GitHub: 
+- Twitter: 
+- LinkedIn: 
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/NeckerFree/Capstone-Module-2/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
