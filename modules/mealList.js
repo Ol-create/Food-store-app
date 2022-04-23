@@ -28,7 +28,33 @@ const mealList = async (data) => {
 
     image.src = data[i].strMealThumb;
     mealName.innerHTML = data[i].strMeal;
-	listItem.appendChild(image);
+
+    const likesText = document.createElement('div');
+    likesText.classList.add('count');
+
+    const like = document.createElement('div');
+    const icon = document.createElement('i');
+    icon.classList.add('fa', 'fa-heart-o');
+    like.classList.add('like');
+    like.appendChild(icon);
+
+    const likesCount = document.createElement('p');
+    likesCount.classList.add('likes-count');
+    likesCount.innerHTML = `${await Promise.resolve(
+      // eslint-disable-next-line comma-dangle
+      updatelike(data[i].idMeal)
+    )} likes`;
+    likesText.appendChild(likesCount);
+
+    like.addEventListener('click', async () => {
+      await Promise.resolve(sendLike(data[i].idMeal));
+      likesCount.innerHTML = `${await Promise.resolve(
+        // eslint-disable-next-line comma-dangle
+        updatelike(data[i].idMeal)
+      )} likes`;
+    });
+
+    listItem.appendChild(image);
     listItem.appendChild(mealName);
     listItem.appendChild(likesText);
     listItem.appendChild(comBtn);
