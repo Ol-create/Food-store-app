@@ -26,11 +26,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Elio Cortés**
+👤 **Oluyemi Paul**
 
-- GitHub: 
-- Twitter: 
-- LinkedIn: 
+- [GitHub: Ol-create](https://github.com/Ol-create)
+- [Twitter: OluyemiPaul99](https://twitter.com/OluyemiPaul99)
+- [LinkedIn: paul-oluyemi-193966ab](https://www.linkedin.com/in/paul-oluyemi-193966ab)
 
 ## 🤝 Contributing
 
