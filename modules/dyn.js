@@ -1,7 +1,9 @@
 // dyn.js
 import image from '../src/icons/like.png';
 
-import { pushLike, pullLikes } from './socialApi';
+import {
+  pullComments, pullCommCounter, pushComment, pushLike, pullLikes,
+} from './socialApi';
 
 export default class DynGrid {
   header = document.getElementById('Header');
@@ -69,7 +71,48 @@ export default class DynGrid {
     });
   }
 
-  genPopupCom = (id) => {
+  paintComments = (id, commentBoard, newC) => {
+    if (newC) {
+      const tmpCommBoardContent = document.getElementById('commBoardContent');
+      commentBoard.removeChild(tmpCommBoardContent);
+    }
+
+    const commBoardContent = document.createElement('div');
+    commBoardContent.id = 'commBoardContent';
+
+    const cmHeader = document.createElement('h2');
+    const cmCounter = document.createElement('span');
+
+    pullComments(id).then((outcome) => {
+      if (outcome.error) {
+        commBoardContent.innerHTML = '<h2>Comments (0)</h2> <span>\nNo comments</span>';
+      } else {
+        cmCounter.textContent = pullCommCounter(outcome);
+        cmHeader.textContent = 'Comments (';
+        cmHeader.appendChild(cmCounter);
+        cmHeader.innerHTML += ')';
+        commBoardContent.append(cmHeader);
+
+        const commList = document.createElement('ul');
+        commList.id = 'commList';
+        outcome.forEach((comment) => {
+          commList.innerHTML += `
+          <li>
+            <span>[${comment.creation_date}]</span>
+            <span class="commentator">${comment.username}: </span>
+            <span> ${comment.comment}</span>
+          </li>
+          `;
+        });
+        commBoardContent.appendChild(commList);
+      }
+    }, () => {
+      commBoardContent.innerHTML = '<span>NO COMMENTS</span>';
+    });
+    commentBoard.appendChild(commBoardContent);
+  };
+
+  genPopupCom = (data, id, unqId, imgSrc, foodName, fCat, fOrig, fTags, fVideo, fInst) => {
     const dynamicGrid = document.getElementById('dynamicGrid');
     dynamicGrid.className = 'dynamic-grid-popup';
     const popupContainer = document.createElement('div');
@@ -88,6 +131,37 @@ export default class DynGrid {
 
     const cardPic = document.createElement('div');
     cardPic.className = 'popup-card-pic';
+
+    const popupImg = document.createElement('img');
+    popupImg.src = `${imgSrc}`;
+    popupImg.alt = `${foodName}`;
+
+    const popupX = document.createElement('div');
+    popupX.className = 'popup-x';
+    popupX.innerHTML = 'X';
+
+    const popupMeta = document.createElement('div');
+    popupMeta.className = 'popup-meta';
+
+    popupMeta.innerHTML = `
+    <div class="popup-info">
+      <h1 class="popup-title">${foodName}</h1>
+      <div class="popup-meal-details">
+        <span>Category: ${fCat}</span> &nbsp; &nbsp; &nbsp; &nbsp;
+        <span>Origin: ${fOrig}</span> &nbsp; &nbsp; &nbsp; &nbsp;
+        <span>Tags: ${fTags}</span></br>
+        <span>Recipe's video: <a href="${fVideo}">${fVideo}</a></span></br>
+        <p>Instructions: ${fInst}</p>
+      </div>
+    </div>
+    `;
+
+    cardPic.appendChild(popupImg);
+    popupHeader.appendChild(empty);
+    popupHeader.appendChild(cardPic);
+    popupHeader.appendChild(popupX);
+    mealInfo.appendChild(popupHeader);
+    mealInfo.appendChild(popupMeta);
 
     const commentBoard = document.createElement('div');
     commentBoard.className = 'comment-board';
@@ -127,8 +201,38 @@ export default class DynGrid {
     addCommentBtn.type = 'button';
     addCommentBtn.className = 'btn';
     addCommentBtn.innerHTML = 'Comment';
+    commentForm.appendChild(addCommentBtn);
 
     popupContainer.appendChild(mealInfo);
+    popupContainer.appendChild(commentBoard);
+    popupContainer.appendChild(commentForm);
+
+    dynamicGrid.appendChild(popupContainer);
+
+    popupX.addEventListener('click', () => {
+      this.showPage(data);
+    });
+
+    addCommentBtn.addEventListener('click', async () => {
+      // PUSH NEW COMMENT TO API
+      await Promise.resolve(pushComment(id, newName.value, newComment.value));
+      commentForm.reset();
+      // UPDATES THE COMMENT BOARD WITH THE NEW COMMENT
+      const newC = true;
+      await Promise.resolve(this.paintComments(id, commentBoard, newC));
+    });
+
+    const commBoardContent = document.createElement('div');
+
+    const commList = document.createElement('ul');
+    commList.id = 'commList';
+    commList.innerHTML += `
+    <li>
+      <span class="commentator">${newName.value}: </span>
+      <span> ${newComment.value}</span>
+    </li>
+    `;
+    commentBoard.appendChild(commBoardContent);
   };
 
   showPage = async (data) => {
@@ -147,6 +251,23 @@ export default class DynGrid {
       const foodName = data[i].strMeal;
       this.genCard(dataSet, cardId, cardUnqId, picSrc, foodName);
     }
+  }
+
+  showPopup = (data, i) => {
+    this.dynamicGrid.innerHTML = '';
+    this.header.className = 'hide';
+    this.footer.className = 'hide';
+    const cardId = i;
+    const cardUnqId = data[i].idMeal;
+    const picSrc = data[i].strMealThumb;
+    const foodName = data[i].strMeal;
+    const fCat = data[i].strCategory;
+    const fOrig = data[i].strArea;
+    const fTags = data[i].strTags;
+    // if(data[i].)
+    const fVideo = data[i].strYoutube;
+    const fInst = data[i].strInstructions;
+    this.genPopupCom(data, cardId, cardUnqId, picSrc, foodName, fCat, fOrig, fTags, fVideo, fInst);
   }
 
   hideIt = (item) => {
