@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Capstone Module 2
-
+# Food Store
+### Presentation [link](https://www.loom.com/share/17cf085fcb444782b44d374cbb9ca33c)
 
 > Web application that get data from https://www.themealdb.com/api.php, and maintains likes, comments and reserevations using Involvement API.
 
@@ -9,8 +9,6 @@
 ## Built With
 
 - Technologies used: HTML, CSS, Javascript, Webpack, Jest
-
-## Live Demo (if available)
 
 ## Getting Started
 
