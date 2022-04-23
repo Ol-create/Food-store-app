@@ -28,3 +28,12 @@ const mealList = async (data) => {
 
     image.src = data[i].strMealThumb;
     mealName.innerHTML = data[i].strMeal;
+	listItem.appendChild(image);
+    listItem.appendChild(mealName);
+    listItem.appendChild(likesText);
+    listItem.appendChild(comBtn);
+    main.appendChild(listItem);
+  }
+};
+
+export default mealList;
