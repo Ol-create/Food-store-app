@@ -11,7 +11,6 @@
 body {
   margin: 0;
   padding: 0;
-
   background-color: rgb(245, 234, 234);
 }
 
@@ -65,62 +64,12 @@ h2 {
 
 .dynamic-grid,
 .card-grid {
-
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto auto auto;
   grid-template-columns: auto auto auto auto;
   padding: 0.6rem;
   margin: 0 1rem;
-}
-
-.header ul {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0;
-}
-
-.header ul a {
-  color: #000;
-}
-
-.logo {
-  font-size: 1.4rem;
-  font-weight: 900;
-}
-
-h1 {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #222;
-  margin: 0;
-}
-
-h2 {
-  font-size: 0.9rem;
-  text-align: center;
-  color: #222;
-  margin: 0;
-}
-
-.dynamic-grid,
-.card-grid {
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  margin: 0 11%;
-  padding: 0.5rem;
-  gap: 1.4rem;
 }
 
 .card-container {
