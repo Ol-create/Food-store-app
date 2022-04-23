@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-await-in-loop */
