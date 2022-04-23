@@ -11,13 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(233, 224, 224);
-}
-
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  height: 100vh;
+  background-color: rgb(245, 234, 234);
 }
 
 .header {
@@ -70,12 +64,12 @@ h2 {
 
 .dynamic-grid,
 .card-grid {
+  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  margin: 0 11%;
-  padding: 0.5rem;
-  gap: 1.4rem;
+  -ms-grid-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  padding: 0.6rem;
+  margin: 0 1rem;
 }
 
 .card-container {
