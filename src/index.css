@@ -60,3 +60,22 @@
   .header ul a {
 	color: #000;
   }
+
+  .logo {
+	font-size: 1.4rem;
+	font-weight: 900;
+  }
+
+  h1 {
+	font-size: 1.2rem;
+	text-align: center;
+	color: #222;
+	margin: 0;
+  }
+
+  h2 {
+	font-size: 0.9rem;
+	text-align: center;
+	color: #222;
+	margin: 0;
+  }
