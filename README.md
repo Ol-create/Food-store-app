@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 - On the terminal, navigate into the directory like so: `cd Capstone-Module-2`
 
 ### Install
-- in visual studio code build with the command `npm run build` 
+- in visual studio code build with the command `npm run build`
 - and run the distribution with the command `npm start`
 
 ## Authors
