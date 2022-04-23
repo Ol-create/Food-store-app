@@ -70,3 +70,5 @@ export default class DynGrid {
       this.showPopup(data, i);
     });
   }
+}
+
