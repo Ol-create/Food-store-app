@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Food Store
-### Presentation link ![](https://www.loom.com/share/17cf085fcb444782b44d374cbb9ca33c)
+### Presentation [link](https://www.loom.com/share/17cf085fcb444782b44d374cbb9ca33c)
 
 > Web application that get data from https://www.themealdb.com/api.php, and maintains likes, comments and reserevations using Involvement API.
 
@@ -30,9 +30,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Oluyemi Paul**
 
-- GitHub: (https://github.com/Ol-create)
-- Twitter: (https://twitter.com/OluyemiPaul99)
-- LinkedIn: (https://www.linkedin.com/in/paul-oluyemi-193966ab)
+- [GitHub: Ol-create](https://github.com/Ol-create)
+- [Twitter: OluyemiPaul99](https://twitter.com/OluyemiPaul99)
+- [LinkedIn: paul-oluyemi-193966ab](https://www.linkedin.com/in/paul-oluyemi-193966ab)
 
 ## 🤝 Contributing
 
