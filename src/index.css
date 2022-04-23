@@ -1,5 +1,3 @@
-/* stylelint disabled */
-
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Crete+Round&family=Dosis:wght@300;400&family=Inter:wght@600&family=Lato:wght@700&family=Merriweather:ital@1&family=Montserrat:wght@700&family=Poppins:wght@200;400;600&family=Quicksand:wght@700&family=Roboto:wght@700&family=Space+Mono:ital@1&display=swap");
 
 * {
@@ -8,10 +6,24 @@
   list-style: none;
 }
 
+.zeroSpacing {
+  padding: 0;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(245, 234, 234);
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
 }
 
 .header {
@@ -66,10 +78,11 @@ h2 {
 .card-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto;
-  grid-template-columns: auto auto auto auto;
-  padding: 0.6rem;
-  margin: 0 1rem;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  margin: 0 11%;
+  padding: 0.5rem;
+  gap: 1.4rem;
 }
 
 .card-container {
@@ -127,6 +140,284 @@ h2 {
   padding: 0.1rem;
 }
 
+.popup-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 95%;
+  max-width: 100vh;
+  border: solid 0.2rem black;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem;
+}
+
+.empty {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.popup-x {
+  font-size: 1.8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  margin-right: 0.2rem;
+  padding: 0 0.2rem;
+  cursor: pointer;
+}
+
+.card-meta {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.card-meta p {
+  padding-top: 0;
+  margin-top: 0;
+  text-align: end;
+}
+
+.card-info {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  margin: 0.2rem 0;
+  gap: 0.3rem;
+}
+
+.card-info .card-socials {
+  text-align: right;
+  min-width: 2.8rem;
+  padding: 0;
+  gap: 0;
+}
+
+.card-info .card-socials .like-btn {
+  height: 1.6rem;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.card-info .card-socials .like-counter {
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.meal-info {
+  width: 100%;
+}
+
+.popup-header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.popup-card-pic {
+  width: 63vw;
+  max-width: 80vh;
+  -ms-grid-column-align: center;
+  justify-self: center;
+  margin-bottom: 0;
+  padding-top: 0.2rem;
+}
+
+.popup-card-pic img {
+  overflow: hidden;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  max-height: 30vh;
+}
+
+.popup-meta {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.popup-meta .popup-info {
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 60vw;
+  max-width: 80vh;
+  -ms-flex-item-align: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.popup-meta .popup-info .popup-title {
+  font-style: normal;
+}
+
+.popup-meta .popup-info .popup-meal-details {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.comment-board {
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2;
+  width: 60vw;
+  max-width: 80vh;
+}
+
+.comment-board span {
+  font-size: 0.7rem;
+}
+
+.comment-board ul li {
+  font-size: 0.7rem;
+}
+
+.comment-board ul li .commentator {
+  font-weight: bolder;
+}
+
+#grid .gridPoint {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem;
+}
+
+#grid .imgClass {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+#grid .count {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: end;
+}
+
+#grid .like {
+  width: 6%;
+  height: 1.5rem;
+  margin-top: -4rem;
+  margin-left: 23rem;
+  background: #7c7878;
+}
+
+.comment-counter {
+  padding: 0.2rem;
+}
+
+.btn,
+.comment-btn,
+.commentsBtn,
+.reserve-btn {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: solid 0.2rem black;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
+  box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.9);
+  margin: 0.3rem;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  user-select: none;
+
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+
+  /* Safari */
+  -khtml-user-select: none;
+
+  /* Konqueror HTML */
+  -moz-user-select: none;
+
+  /* Firefox */
+  -ms-user-select: none;
+
+  /* Internet Explorer/Edge */
+}
+
+.btn:hover,
+.comment-btn:hover,
+.reserve-btn:hover,
+.commentsBtn:hover {
+  color: #fff;
+  background-color: #000;
+}
+
 footer {
   margin-bottom: 0.4rem;
   margin-left: 0;
@@ -146,4 +437,54 @@ footer hr {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   border: solid 1px #000;
+}
+
+/* #### MEDIUM PHONE DESIGN #### */
+@media screen and (min-width: 390px) {
+  .card-grid,
+  .dynamic-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 1.2rem;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}
+
+/* #### TABLET DESIGN #### */
+@media screen and (min-width: 590px) {
+  .header {
+    margin: 0 1.7rem;
+  }
+
+  .card-grid,
+  .dynamic-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 1.7rem;
+    padding: 0.5rem;
+    gap: 1.6rem;
+  }
+}
+
+/* #### DESKTOP DESIGN #### */
+@media screen and (min-width: 768px) {
+  .header {
+    margin: 0 2.2rem;
+  }
+
+  .card-grid,
+  .dynamic-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 2.2rem;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
 }

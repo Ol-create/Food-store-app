@@ -1,8 +1,8 @@
 // socialApi.js
 
 const apiAddress = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
-const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/paul4jsLQspdbzdaBFGyapdLOluyemi/likes';
-const unqKey = 'paul4jsLQspdbzdaBFGyapdLOluyemi';
+const likesUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4jsLQspdbzdaBFGyapdL/likes';
+const unqKey = '4jsLQspdbzdaBFGyapdL';
 
 const pushCommentToApi = async (pushThisToApi) => {
   const outcome = await fetch(`${apiAddress}/${unqKey}/comments`, {
@@ -33,7 +33,6 @@ const pullComments = async (id) => {
 };
 
 const pullCommCounter = (commList) => commList.length;
-
 const pushLikeToApi = async (pushThisToApi) => {
   const outcome = await fetch(likesUrl, {
     method: 'POST',

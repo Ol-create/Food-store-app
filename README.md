@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Capstone Module 2
+# Food Store
 
 
 > Web application that get data from https://www.themealdb.com/api.php, and maintains likes, comments and reserevations using Involvement API.
@@ -23,16 +23,16 @@ To get a local copy up and running follow these simple example steps.
 - On the terminal, navigate into the directory like so: `cd Capstone-Module-2`
 
 ### Install
-- in visual studio code build with the command `npm run build` 
+- in visual studio code build with the command `npm run build`
 - and run the distribution with the command `npm start`
 
 ## Authors
 
-👤 **Elio Cortés**
+👤 **Oluyemi Paul**
 
-- GitHub: 
-- Twitter: 
-- LinkedIn: 
+- GitHub: (https://github.com/Ol-create)
+- Twitter: (https://twitter.com/OluyemiPaul99)
+- LinkedIn: (https://www.linkedin.com/in/paul-oluyemi-193966ab)
 
 ## 🤝 Contributing
 
