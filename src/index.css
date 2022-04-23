@@ -1,92 +1,71 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Crete+Round&family=Dosis:wght@300;400&family=Inter:wght@600&family=Lato:wght@700&family=Merriweather:ital@1&family=Montserrat:wght@700&family=Poppins:wght@200;400;600&family=Quicksand:wght@700&family=Roboto:wght@700&family=Space+Mono:ital@1&display=swap");
 
 * {
-	font-family: Merriweather, Arial, Helvetica, sans-serif;
-	text-decoration: none;
-	list-style: none;
-  }
+  font-family: Merriweather, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
 
-  body {
-	margin: 0;
-	padding: 0;
+body {
+  margin: 0;
+  padding: 0;
   background-color: rgb(245, 234, 234);
-  }
+}
 
+.header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  padding: 0.6rem;
+  margin: 0 1rem;
+}
 
-  ul {
-	-webkit-margin-before: 0;
-			margin-block-start: 0;
-	-webkit-margin-after: 0;
-			margin-block-end: 0;
-	-webkit-margin-start: 0;
-			margin-inline-start: 0;
-	-webkit-margin-end: 0;
-			margin-inline-end: 0;
-	-webkit-padding-start: 0;
-			padding-inline-start: 0;
-  }
+.header ul {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+}
 
-  .grid-container {
-	display: -ms-grid;
-	display: grid;
-	height: 100vh;
-  }
+.header ul a {
+  color: #000;
+}
 
-  .header {
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: auto auto auto auto;
-		grid-template-columns: auto auto auto auto;
-	padding: 0.6rem;
-	margin: 0 1rem;
-  }
+.logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
 
-  .header ul {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-		-ms-flex-direction: row;
-			flex-direction: row;
-	-webkit-box-pack: justify;
-		-ms-flex-pack: justify;
-			justify-content: space-between;
-	-webkit-box-align: center;
-		-ms-flex-align: center;
-			align-items: center;
-	margin: 0;
-  }
+h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #222;
+  margin: 0;
+}
 
-  .header ul a {
-	color: #000;
-  }
+h2 {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #222;
+  margin: 0;
+}
 
-  .logo {
-	font-size: 1.4rem;
-	font-weight: 900;
-  }
-
-  h1 {
-	font-size: 1.2rem;
-	text-align: center;
-	color: #222;
-	margin: 0;
-  }
-
-  h2 {
-	font-size: 0.9rem;
-	text-align: center;
-	color: #222;
-	margin: 0;
-  }
-
-  .dynamic-grid,
+.dynamic-grid,
 .card-grid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   margin: 0 11%;
   padding: 0.5rem;
   gap: 1.4rem;
@@ -94,79 +73,76 @@
 
 .card-container {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 0.5rem;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   padding: 0.6rem;
 }
 
 .dynamic-grid-popup {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0.6rem;
   gap: 1rem;
 }
 
 .card-pic {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: initial;
-      -ms-flex-positive: initial;
-          flex-grow: initial;
+  -ms-flex-positive: initial;
+  flex-grow: initial;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   height: 25vh;
 }
 
 .card-pic img {
   overflow: hidden;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: auto;
   padding: 0.1rem;
 }
 
 footer {
-	margin-bottom: 0.4rem;
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
-	padding: 0;
-  }
+  margin-bottom: 0.4rem;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  padding: 0;
+}
 
-  footer .copyrights {
-	padding: 0.4rem;
-	margin: 0 1rem;
-	text-align: left;
-  }
+footer .copyrights {
+  padding: 0.4rem;
+  margin: 0 1rem;
+  text-align: left;
+}
 
-  footer hr {
-	margin: 0;
-	margin-bottom: 0.5rem;
-	margin-top: 0.5rem;
-	border: solid 1px #000;
-  }
+footer hr {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border: solid 1px #000;
+}
