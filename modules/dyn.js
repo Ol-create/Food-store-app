@@ -37,5 +37,36 @@ export default class DynGrid {
     const showLikeQt = async (data, i, unqId) => {
       likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
     };
+    showLikeQt(data, i, unqId);
+    likeBtn.addEventListener('click', async () => {
+      await Promise.resolve(pushLike(unqId));
+      likeCounter.innerHTML = `${await Promise.resolve(pullLikes(unqId))} likes`;
+    });
+    const commentBtn = document.createElement('div');
+    commentBtn.id = `${id}`;
+    commentBtn.innerHTML = 'Comments';
+    const reserveBtn = document.createElement('div');
+    reserveBtn.innerHTML = 'Reservations';
+    commentBtn.classList.add('comment-btn');
+    reserveBtn.classList.add('reserve-btn');
+
+    cardContainer.className = 'card-container';
+    cardContainer.id = `${unqId}`;
+    this.dynamicGrid.className = 'dynamic-grid';
+
+    cardPic.appendChild(cardPicImg);
+    cardSocials.appendChild(likeBtn);
+    cardSocials.appendChild(likeCounter);
+    cardInfo.appendChild(cardTitle);
+    cardInfo.appendChild(cardSocials);
+    cardMeta.appendChild(cardInfo);
+    cardMeta.appendChild(commentBtn);
+    cardMeta.appendChild(reserveBtn);
+    cardContainer.appendChild(cardPic);
+    cardContainer.appendChild(cardMeta);
+    this.dynamicGrid.appendChild(cardContainer);
+
+    commentBtn.addEventListener('click', () => {
+      this.showPopup(data, i);
+    });
   }
-}
