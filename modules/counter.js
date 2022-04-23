@@ -1,7 +1,7 @@
 const getCount = async (meals, num) => {
-	meals.splice(num);
-	const listCount = meals.length;
-	return listCount;
-  };
+  meals.splice(num);
+  const listCount = meals.length;
+  return listCount;
+};
 
-  module.exports = getCount;
+module.exports = getCount;
